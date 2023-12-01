@@ -20,6 +20,7 @@ let velocityX=0;
 let velocityY=0;
 let snakeBody=[];
 let gameOver=false;
+let val=0;
 
 window.onload=function(){
     board=document.getElementById("board");
@@ -58,7 +59,35 @@ for(let i=snakeBody.length-1;i>0;i--){
 if(snakeBody.length){
     snakeBody[0]=[snakeX,snakeY];
 }
-    context.fillStyle="lime";
+    if(snakeBody.length%16==0)context.fillStyle="lime";
+    else if(snakeBody.length%16==1)context.fillStyle="purple";
+    else if(snakeBody.length%16==2)context.fillStyle="yellow";
+    else if(snakeBody.length%16==3)context.fillStyle="#ffbf80";
+    else if(snakeBody.length%16==4)context.fillStyle="#ff6699";
+    else if(snakeBody.length%16==5)context.fillStyle="lime";
+    else if(snakeBody.length%16==6)context.fillStyle="yellow";
+    else if(snakeBody.length%16==7)context.fillStyle="lime";
+    else if(snakeBody.length%16==8)context.fillStyle="#000099";
+    else if(snakeBody.length%16==9)context.fillStyle=" #ff00ff";
+    else if(snakeBody.length%16==10)context.fillStyle="#80ffff";
+    else if(snakeBody.length%16==11)context.fillStyle="#33cc33";
+    else if(snakeBody.length%16==12)context.fillStyle="#ff6699";
+    else if(snakeBody.length%16==13)context.fillStyle="#ffbf80";
+    else if(snakeBody.length%16==14)context.fillStyle="yellow";
+    else if(snakeBody.length%16==15)context.fillStyle="pink";
+   
+
+
+
+
+
+
+
+
+
+
+
+    
     snakeX+=velocityX*blockSize;
     snakeY+=velocityY*blockSize;
     context.fillRect(snakeX,snakeY,blockSize,blockSize);
